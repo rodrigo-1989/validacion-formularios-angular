@@ -1,0 +1,56 @@
+<h2>Reactivos <small>Switches</small></h2>
+<hr>
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+
+    <div class="row m-3">
+        <label class="col-sm-3 col-form-label ">Género</label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input type="radio" class="form-check-input" formControlName="genero" value="M">
+                <label class="form-check-label" for=""></label>
+                Masculino
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" formControlName="genero" value="F">
+                <label class="form-check-label" for="radioF"></label>
+                Femenino
+            </div>
+        </div>
+    </div>
+
+    <!-- S -->
+    <div class="row m-3">
+        <label class="col-sm-3 col-form-label ">Notificaciones</label>
+        <div class="col-sm-9">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chec" formControlName="notificaciones">
+                <label class="form-check-label" for="chec">Quiero recibir notificaciones</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <label class="col-sm-3 col-form-label ">Terminos y condiciones</label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flexCheck" formControlName="terminos" >
+                <label class="form-check-label" for="flexCheck">Terminos y condiciones de uso</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" type="submit">Guardar</button>
+        </div>
+    </div>
+</form>
+
+<h5>Valor del formulario</h5>
+<pre>{{ miFormulario.value | json}}</pre>
+<br>
+<h5>Valor del persona</h5>
+<pre>{{ persona | json}}</pre>
+<br>
+<h5>Valid</h5>
+<pre>{{ miFormulario.valid }}</pre>
